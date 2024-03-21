@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normalTextSize">24sp</dimen>
+    <dimen name="titleTextSize">32sp</dimen>
+    <dimen name="smallTextSize">16sp</dimen>
+</resources>
