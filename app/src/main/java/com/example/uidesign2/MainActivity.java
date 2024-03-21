@@ -16,7 +16,9 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    /**
+     * 用户视图切换的标志
+     */
     boolean useLinearLayout;
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
@@ -116,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 重写方法，绑定菜单栏样式layout
+     * 重写方法，绑定自定义的option菜单栏样式
      * @param menu The options menu in which you place your items.
      *
      * @return
@@ -128,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 重写方法，管理菜单栏的具体控件
+     * 重写方法，管理option菜单栏的具体控件
      * @param item The menu item that was selected.
      *
      * @return
@@ -140,17 +142,20 @@ public class MainActivity extends AppCompatActivity {
             switchview();
         }
         if(itemId == R.id.add){
-
+        //
         }
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * 菜单栏里切换视图的方法
+     */
     public void switchview(){
         if(useLinearLayout){
             recyclerView.setLayoutManager(layoutManager);
         }else{
             recyclerView.setLayoutManager(gridLayoutManager);
         }
-        useLinearLayout = !useLinearLayout;
+        useLinearLayout = !useLinearLayout;//切换视图
     }
 }

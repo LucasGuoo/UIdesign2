@@ -35,7 +35,7 @@ public class MYAdapter extends RecyclerView.Adapter<MYAdapter.MyViewHolder> {
     ArrayList<String> fruitsInfo ;
 
     /**
-     * 初始化适配器，初始fruitInfo,此时应该拿到所有水果的数据
+     * 初始化适配器，同时初始fruitInfo,此时应该拿到所有水果的数据
      * @param fruitsInfo
      */
     public MYAdapter(ArrayList<String> fruitsInfo) {
@@ -96,7 +96,7 @@ public class MYAdapter extends RecyclerView.Adapter<MYAdapter.MyViewHolder> {
             popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
-
+                    //选项的具体操作
                     return false;
                 }
             });
