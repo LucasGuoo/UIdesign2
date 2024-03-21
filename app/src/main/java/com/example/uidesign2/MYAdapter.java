@@ -2,6 +2,7 @@ package com.example.uidesign2;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,7 +58,7 @@ public class MYAdapter extends RecyclerView.Adapter<MYAdapter.MyViewHolder> {
     }
 
     /**
-     * 控件的绑定
+     * 控件的绑定，把具体信息绑定到各个子项，并给每个单独的子项设计一个事件监听，弹出popupmenu
      * @param holder The ViewHolder which should be updated to represent the contents of the
      *        item at the given position in the data set.
      * @param position The position of the item within the adapter's data set.
@@ -77,6 +78,7 @@ public class MYAdapter extends RecyclerView.Adapter<MYAdapter.MyViewHolder> {
     holder.textViewEnglish.setText(fruit.getEnglish());
     holder.textViewNo.setText(String.valueOf(position + 1));
 
+    //点击查看更多信息
     holder.imageViewReadMore.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -84,6 +86,8 @@ public class MYAdapter extends RecyclerView.Adapter<MYAdapter.MyViewHolder> {
             Toast.makeText(context,"查看更多",Toast.LENGTH_SHORT).show();
         }
     });
+
+    //holder的事件监听，弹出popupmenu
     holder.itemView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -96,6 +100,8 @@ public class MYAdapter extends RecyclerView.Adapter<MYAdapter.MyViewHolder> {
                     return false;
                 }
             });
+            popupMenu.setGravity(Gravity.END);
+            popupMenu.show();
         }
     });
 

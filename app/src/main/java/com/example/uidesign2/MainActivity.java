@@ -115,12 +115,24 @@ public class MainActivity extends AppCompatActivity {
         return fruits;
     }
 
+    /**
+     * 重写方法，绑定菜单栏样式layout
+     * @param menu The options menu in which you place your items.
+     *
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * 重写方法，管理菜单栏的具体控件
+     * @param item The menu item that was selected.
+     *
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
